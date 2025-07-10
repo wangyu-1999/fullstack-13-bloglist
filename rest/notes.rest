@@ -1,0 +1,31 @@
+GET http://localhost:8080/api/blogs
+
+###
+
+POST http://localhost:8080/api/blogs
+Content-Type: application/json
+
+{
+    "title": "This is a new blog",
+    "author": "Author Name",
+    "url": "http://example.com",
+    "likes": 0
+}
+
+###
+
+GET http://localhost:8080/api/blogs/1
+
+###
+PUT http://localhost:8080/api/blogs/1
+Content-Type: application/json
+
+{
+    "title": "This is an updated blog",
+    "author": "Updated Author Name",
+    "url": "http://example.com",
+    "likes": 5
+}
+
+###
+DELETE http://localhost:8080/api/blogs/1
