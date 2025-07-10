@@ -21,9 +21,6 @@ PUT http://localhost:8080/api/blogs/1
 Content-Type: application/json
 
 {
-    "title": "This is an updated blog",
-    "author": "Updated Author Name",
-    "url": "http://example.com",
     "likes": 5
 }
 
