@@ -1,7 +1,9 @@
 import { User, Blog } from '../models/index.js';
 
 export const getAllUsers = async (_req, res) => {
-  const users = await User.findAll({ include: { model: Blog } });
+  const users = await User.findAll({
+    include: { model: Blog, attributes: { exclude: ['userId'] } },
+  });
   res.json(users);
 };
 

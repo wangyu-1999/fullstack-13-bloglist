@@ -1,14 +1,22 @@
 import { Blog, User } from '../models/index.js';
 
 export const getAllBlogs = async (_req, res) => {
-  const blogs = await Blog.findAll();
+  const blogs = await Blog.findAll({
+    attributes: { exclude: ['userId'] },
+    include: {
+      model: User,
+      attributes: ['name'],
+    },
+  });
   // console.log(JSON.stringify(blogs, null, 2));
   res.json(blogs);
 };
 
 export const createBlog = async (req, res) => {
-  // TODO
-  const user = await User.findOne();
+  const user = await User.findOne({ where: { id: req.decodedToken.id } });
+  if (!user) {
+    return res.status(401).json({ error: 'User not found' });
+  }
   const newBlog = await Blog.create({ ...req.body, userId: user.id });
   res.status(201).json(newBlog);
 };

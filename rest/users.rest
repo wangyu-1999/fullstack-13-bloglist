@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
   "name": "New User",
-  "username": "newuser@example.com"
+  "username": "newuser11@example.com"
 }
 
 ###

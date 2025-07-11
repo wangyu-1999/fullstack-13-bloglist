@@ -1,6 +1,6 @@
 import logger from '../utils/logger.js';
 const postgresErrorHandler = (err, _req, res, next) => {
-  logger.error(err.message);
+  logger.error(`${err.name}: ${err.message}`);
   if (
     err.name === 'SequelizeConnectionError' ||
     err.name === 'SequelizeConnectionRefusedError'
@@ -11,11 +11,11 @@ const postgresErrorHandler = (err, _req, res, next) => {
   } else if (err.name === 'SequelizeValidationError') {
     return res
       .status(400)
-      .json({ error: 'Validation error', details: err.errors });
+      .json({ error: err.errors.map((err) => err.message) });
   } else if (err.name === 'SequelizeDatabaseError') {
     return res
       .status(500)
-      .json({ error: 'Database error', details: err.message });
+      .json({ error: err.errors.map((err) => err.message) });
   }
   next(err);
 };

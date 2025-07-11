@@ -4,10 +4,22 @@ GET http://localhost:8080/api/blogs
 
 POST http://localhost:8080/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1MjIzMDg3MH0.qQ2QOEjlLbXUOkebhgOkxkzDBJ-vMjrnNapnHeQpoDk
 
 {
     "title": "This is a new blog 111",
     "author": "Author Name",
+    "url": "http://example.com",
+    "likes": 0
+}
+
+###
+POST http://localhost:8080/api/blogs
+Content-Type: application/json
+
+{
+    "title": "This is a new blog 1122",
+    "author": "Author Namddde",
     "url": "http://example.com",
     "likes": 0
 }
