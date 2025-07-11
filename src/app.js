@@ -3,6 +3,7 @@ import express from 'express';
 
 import postgresErrorHandler from './middleware/postgres-error-handler.js';
 import unknownEndpoint from './middleware/unknown-endpoint.js';
+import authorsRouter from './routes/authors.routes.js';
 import blogsRouter from './routes/blogs.routes.js';
 import loginRouter from './routes/login.routes.js';
 import usersRouter from './routes/users.routes.js';
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/api/blogs', blogsRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);
+app.use('/api/authors', authorsRouter);
 
 app.use(unknownEndpoint);
 app.use(postgresErrorHandler);

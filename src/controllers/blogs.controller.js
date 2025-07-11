@@ -1,4 +1,4 @@
-import { Op } from 'sequelize';
+import { Op, fn, col } from 'sequelize';
 
 import { NotFoundError } from '../custom-errors/index.js';
 import { Blog, User } from '../models/index.js';
@@ -64,4 +64,17 @@ export const deleteBlog = async (req, res) => {
   }
   await blog.destroy();
   res.status(204).end();
+};
+
+export const getAuthorGropStatistics = async (req, res) => {
+  const blogs = await Blog.findAll({
+    attributes: [
+      'author',
+      [fn('COUNT', col('id')), 'articles'],
+      [fn('SUM', col('likes')), 'likes'],
+    ],
+    group: 'author',
+    order: [[fn('SUM', col('likes')), 'DESC']],
+  });
+  res.json(blogs);
 };
