@@ -6,7 +6,7 @@ POST http://localhost:8080/api/blogs
 Content-Type: application/json
 
 {
-    "title": "This is a new blog",
+    "title": "This is a new blog 111",
     "author": "Author Name",
     "url": "http://example.com",
     "likes": 0

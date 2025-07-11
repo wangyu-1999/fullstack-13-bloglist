@@ -1,4 +1,4 @@
-import { Blog } from '../models/index.js';
+import { Blog, User } from '../models/index.js';
 
 export const getAllBlogs = async (_req, res) => {
   const blogs = await Blog.findAll();
@@ -7,7 +7,9 @@ export const getAllBlogs = async (_req, res) => {
 };
 
 export const createBlog = async (req, res) => {
-  const newBlog = await Blog.create(req.body);
+  // TODO
+  const user = await User.findOne();
+  const newBlog = await Blog.create({ ...req.body, userId: user.id });
   res.status(201).json(newBlog);
 };
 
