@@ -1,13 +1,24 @@
+import { Op } from 'sequelize';
+
 import { NotFoundError } from '../custom-errors/index.js';
 import { Blog, User } from '../models/index.js';
 
-export const getAllBlogs = async (_req, res) => {
+export const getBlogs = async (req, res) => {
+  let where = {};
+  if (req.query.search) {
+    where = {
+      title: {
+        [Op.iLike]: `%${req.query.search}%`,
+      },
+    };
+  }
   const blogs = await Blog.findAll({
     attributes: { exclude: ['userId'] },
     include: {
       model: User,
       attributes: ['name'],
     },
+    where,
   });
   // console.log(JSON.stringify(blogs, null, 2));
   res.json(blogs);

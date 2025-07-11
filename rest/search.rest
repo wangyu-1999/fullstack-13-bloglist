@@ -1,0 +1,9 @@
+GET http://localhost:8080/api/blogs
+
+###
+
+GET http://localhost:8080/api/blogs?search=book
+
+###
+
+GET http://localhost:8080/api/blogs?search=Book

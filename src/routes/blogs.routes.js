@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import {
-  getAllBlogs,
+  getBlogs,
   createBlog,
   getBlogById,
   changeBlogLikes,
@@ -11,7 +11,7 @@ import tokenExtractor from '../middleware/token-extractor.js';
 
 const router = Router();
 
-router.get('/', getAllBlogs);
+router.get('/', getBlogs);
 router.post('/', tokenExtractor, createBlog);
 router.get('/:id', getBlogById);
 router.put('/:id', changeBlogLikes);
