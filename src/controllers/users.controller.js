@@ -1,3 +1,4 @@
+import { NotFoundError } from '../custom-errors/index.js';
 import { User, Blog } from '../models/index.js';
 
 export const getAllUsers = async (_req, res) => {
@@ -9,9 +10,7 @@ export const getAllUsers = async (_req, res) => {
 
 export const getUserByUsername = async (req, res) => {
   const user = await User.findOne({ where: { username: req.params.username } });
-  if (!user) {
-    return res.status(404).json({ error: 'User not found' });
-  }
+  if (!user) throw new NotFoundError('User not found');
   res.json(user);
 };
 
@@ -22,9 +21,7 @@ export const createUser = async (req, res) => {
 
 export const changeUserName = async (req, res) => {
   const user = await User.findOne({ where: { username: req.params.username } });
-  if (!user) {
-    return res.status(404).json({ error: 'User not found' });
-  }
+  if (!user) throw new NotFoundError('User not found');
   user.username = req.body.username || user.username;
   await user.save();
   res.json(user);

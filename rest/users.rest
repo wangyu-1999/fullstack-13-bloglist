@@ -5,8 +5,8 @@ POST http://localhost:8080/api/users
 Content-Type: application/json
 
 {
-  "name": "New User",
-  "username": "newuser11@example.com"
+  "name": "New User AA",
+  "username": "newuseraa@example.com"
 }
 
 ###
@@ -30,6 +30,6 @@ POST http://localhost:8080/api/login
 Content-Type: application/json
 
 {
-  "username": "newuser1@example.com",
+  "username": "newuseraa@example.com",
   "password": "mysecret"
 }

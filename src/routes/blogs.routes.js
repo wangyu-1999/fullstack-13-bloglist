@@ -15,6 +15,6 @@ router.get('/', getAllBlogs);
 router.post('/', tokenExtractor, createBlog);
 router.get('/:id', getBlogById);
 router.put('/:id', changeBlogLikes);
-router.delete('/:id', deleteBlog);
+router.delete('/:id', tokenExtractor, deleteBlog);
 
 export default router;

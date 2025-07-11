@@ -16,6 +16,8 @@ const postgresErrorHandler = (err, _req, res, next) => {
     return res
       .status(500)
       .json({ error: err.errors.map((err) => err.message) });
+  } else if (err.name === 'NotFoundError') {
+    return res.status(404).json({ error: err.message });
   }
   next(err);
 };

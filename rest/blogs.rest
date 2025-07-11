@@ -37,4 +37,6 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:8080/api/blogs/1
+DELETE http://localhost:8080/api/blogs/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1MjIzMDg3MH0.qQ2QOEjlLbXUOkebhgOkxkzDBJ-vMjrnNapnHeQpoDk
+
