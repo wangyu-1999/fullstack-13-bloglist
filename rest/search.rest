@@ -7,3 +7,7 @@ GET http://localhost:8080/api/blogs?search=book
 ###
 
 GET http://localhost:8080/api/blogs?search=Book
+
+###
+
+GET http://localhost:8080/api/blogs?search=alice
