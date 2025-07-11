@@ -1,0 +1,26 @@
+Get http://localhost:8080/api/users
+
+###
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "New User",
+  "username": "newuser@example.com"
+}
+
+###
+GET http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "username": "newuser@example.com"
+}
+
+###
+PUT http://localhost:8080/api/users/newuser@example.com
+Content-Type: application/json
+
+{
+  "username": "newuser1@example.com"
+}

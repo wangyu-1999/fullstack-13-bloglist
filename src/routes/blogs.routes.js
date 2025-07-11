@@ -10,10 +10,10 @@ import {
 
 const router = Router();
 
-router.get('/blogs', getAllBlogs);
-router.post('/blogs', createBlog);
-router.get('/blogs/:id', getBlogById);
-router.put('/blogs/:id', changeBlogLikes);
-router.delete('/blogs/:id', deleteBlog);
+router.get('/', getAllBlogs);
+router.post('/', createBlog);
+router.get('/:id', getBlogById);
+router.put('/:id', changeBlogLikes);
+router.delete('/:id', deleteBlog);
 
 export default router;
