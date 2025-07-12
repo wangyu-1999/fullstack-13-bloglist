@@ -22,7 +22,8 @@ export const getUser = async (req, res) => {
         as: 'readings',
         attributes: { exclude: ['userId', 'createdAt', 'updatedAt'] },
         through: {
-          attributes: [],
+          as: 'readinglists',
+          attributes: ['read', 'id'],
         },
       },
     ],

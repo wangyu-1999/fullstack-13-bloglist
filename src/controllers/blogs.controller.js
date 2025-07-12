@@ -21,6 +21,7 @@ export const getBlogs = async (req, res) => {
     attributes: { exclude: ['userId'] },
     include: {
       model: User,
+      as: 'user',
       attributes: ['name'],
     },
     where,
