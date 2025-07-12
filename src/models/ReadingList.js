@@ -2,9 +2,9 @@ import { Model, DataTypes } from 'sequelize';
 
 import { sequelize } from '../db/postgres.js';
 
-class ReadList extends Model {}
+class ReadingList extends Model {}
 
-ReadList.init(
+ReadingList.init(
   {
     id: {
       allowNull: false,
@@ -31,8 +31,8 @@ ReadList.init(
   {
     sequelize,
     underscored: true,
-    modelName: 'read_list',
+    modelName: 'reading_list',
   }
 );
 
-export default ReadList;
+export default ReadingList;

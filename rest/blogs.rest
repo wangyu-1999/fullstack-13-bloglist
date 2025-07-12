@@ -7,7 +7,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzUyMzIxNTEyfQ.aY9Y7RRCHskrB-HqdrfuIxksRl_SKSwGqJBZ2-F7VwE
 
 {
-    "title": "This is a new blog 111",
+    "title": "This is a new blog",
     "author": "Author Name",
     "url": "http://example.com",
     "likes": 0,
