@@ -6,6 +6,7 @@ export const getAllUsers = async (_req, res) => {
     include: [
       {
         model: Blog,
+        as: 'blogs',
         attributes: { exclude: ['userId'] },
       },
     ],

@@ -5,3 +5,8 @@ Content-Type: application/json
   "userId": 1,
   "blogId": 2
 }
+
+###
+
+PUT http://localhost:8080/api/readinglists/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzUyMzIxNTEyfQ.aY9Y7RRCHskrB-HqdrfuIxksRl_SKSwGqJBZ2-F7VwE
