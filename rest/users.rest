@@ -6,16 +6,11 @@ Content-Type: application/json
 
 {
   "name": "New User",
-  "username": "newuser@example.com"
+  "username": "newus11er@example.com"
 }
 
 ###
-GET http://localhost:8080/api/users
-Content-Type: application/json
-
-{
-  "username": "newuser@example.com"
-}
+GET http://localhost:8080/api/users/1
 
 ###
 PUT http://localhost:8080/api/users/newuser@example.com

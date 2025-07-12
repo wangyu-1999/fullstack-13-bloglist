@@ -12,12 +12,12 @@ ReadingList.init(
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: { model: 'users', key: 'id' },
     },
-    blog_id: {
+    blogId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: { model: 'blogs', key: 'id' },

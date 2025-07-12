@@ -2,7 +2,7 @@ import { Router } from 'express';
 
 import {
   getAllUsers,
-  getUserByUsername,
+  getUser,
   createUser,
   changeUserName,
 } from '../controllers/users.controller.js';
@@ -10,7 +10,7 @@ import {
 const router = Router();
 
 router.get('/', getAllUsers);
-router.get('/:username', getUserByUsername);
+router.get('/:id', getUser);
 router.post('/', createUser);
 router.put('/:username', changeUserName);
 

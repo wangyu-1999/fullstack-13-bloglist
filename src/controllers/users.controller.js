@@ -13,8 +13,20 @@ export const getAllUsers = async (_req, res) => {
   res.json(users);
 };
 
-export const getUserByUsername = async (req, res) => {
-  const user = await User.findOne({ where: { username: req.params.username } });
+export const getUser = async (req, res) => {
+  const user = await User.findByPk(req.params.id, {
+    attributes: { exclude: ['id', 'createdAt', 'updatedAt'] },
+    include: [
+      {
+        model: Blog,
+        as: 'readings',
+        attributes: { exclude: ['userId', 'createdAt', 'updatedAt'] },
+        through: {
+          attributes: [],
+        },
+      },
+    ],
+  });
   if (!user) throw new NotFoundError('User not found');
   res.json(user);
 };
