@@ -41,6 +41,14 @@ export default [
           },
         },
       ],
+      'object-curly-newline': [
+        'error',
+        {
+          minProperties: 3,
+          multiline: true,
+          consistent: true,
+        },
+      ],
     },
   },
 
