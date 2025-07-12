@@ -15,6 +15,10 @@ export const getAllUsers = async (_req, res) => {
 };
 
 export const getUser = async (req, res) => {
+  const where = {};
+  if (req.query.read) {
+    where.read = req.query.read === 'true';
+  }
   const user = await User.findByPk(req.params.id, {
     attributes: { exclude: ['id', 'createdAt', 'updatedAt'] },
     include: [
@@ -25,6 +29,7 @@ export const getUser = async (req, res) => {
         through: {
           as: 'readinglists',
           attributes: ['read', 'id'],
+          where,
         },
       },
     ],
