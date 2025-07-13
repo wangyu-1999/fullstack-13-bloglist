@@ -7,14 +7,14 @@ import {
   changeBlogLikes,
   deleteBlog,
 } from '../controllers/blogs.controller.js';
-import tokenExtractor from '../middleware/token-extractor.js';
+import sessionValidator from '../middleware/session-validator.js';
 
 const router = Router();
 
 router.get('/', getBlogs);
-router.post('/', tokenExtractor, createBlog);
+router.post('/', sessionValidator, createBlog);
 router.get('/:id', getBlogById);
 router.put('/:id', changeBlogLikes);
-router.delete('/:id', tokenExtractor, deleteBlog);
+router.delete('/:id', sessionValidator, deleteBlog);
 
 export default router;

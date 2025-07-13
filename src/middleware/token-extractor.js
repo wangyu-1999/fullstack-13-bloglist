@@ -6,7 +6,7 @@ const tokenExtractor = (req, res, next) => {
   if (authHeader && authHeader.startsWith('Bearer ')) {
     const token = authHeader.split(' ')[1];
     try {
-      const decodedToken = jwt.verify(token, config.SECRET);
+      const decodedToken = jwt.verify(token, config.JWT_SIGN_SECRET);
       req.decodedToken = decodedToken;
     } catch {
       return res.status(401).json({ error: 'Invalid token' });

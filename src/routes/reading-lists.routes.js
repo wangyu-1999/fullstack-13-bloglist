@@ -4,11 +4,11 @@ import {
   createReadingList,
   readReadingList,
 } from '../controllers/reading-lists.controller.js';
-import tokenExtractor from '../middleware/token-extractor.js';
+import sessionValidator from '../middleware/session-validator.js';
 
 const router = Router();
 
-router.post('/', createReadingList);
-router.put('/:id', tokenExtractor, readReadingList);
+router.post('/', sessionValidator, createReadingList);
+router.put('/:id', sessionValidator, readReadingList);
 
 export default router;
